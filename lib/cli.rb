@@ -1,19 +1,20 @@
 class Cli
 
   def self.welcome
-    puts "Hello, Welcome to Tic Tac Toe!"
+    binding.pry
+    puts "Hello, Welcome to Tic Tac Toe!".light_yellow.on_red
     sleep(1)
     self.start
   end
 
   def self.start
-    puts "What kind of game would you like to play: 0, 1, or 2 players?"
+    puts "What kind of game would you like to play: 0, 1, or 2 players?".light_yellow.on_red
     input = gets.strip
     if input == "0"
       game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new)
       self.play_game(game)
     elsif input == "1"
-      puts "Who should go first and be 'X'? (Human/Computer)"
+      puts "Who should go first and be 'X'? (Human/Computer)".light_yellow.on_red
       input = gets.strip.upcase
       case input
       when "HUMAN"
@@ -23,23 +24,23 @@ class Cli
           game = Game.new(Players::Computer.new("X"), Players::Human.new("O"), Board.new)
           self.play_game(game)
       else
-          puts "I didn't understand that."
-          puts "Who should go first and be 'X'? (Human/Computer)"
+          puts "I didn't understand that.".light_yellow.on_red
+          puts "Who should go first and be 'X'? (Human/Computer)".light_yellow.on_red
           input = gets.strip.upcase
       end
     elsif input == "2"
       game = Game.new
       self.play_game(game)
     elsif input == "wargames"
-      puts "Executing wargames"
+      puts "Executing wargames".light_yellow.on_red
       sleep(0.5)
       Game.wargames
-      puts "Game 100"
+      puts "Game 100".light_yellow.on_red
       sleep(0.1)
       game = Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new)
       self.play_game(game)
     else
-      puts "I didn't understand that."
+      puts "I didn't understand that.".light_yellow.on_red
       self.start
     end
   end
@@ -51,14 +52,14 @@ class Cli
   end
 
   def self.play_again?
-    puts "Would you like to play again? (Y/N)"
+    puts "Would you like to play again? (Y/N)".light_yellow.on_red
     input = gets.strip.upcase
     if input == "Y"
       self.start
     elsif input == "N"
-      puts "Thanks for playing!"
+      puts "Thanks for playing!".light_yellow.on_red
     else
-      puts "I didn't understand that."
+      puts "I didn't understand that.".light_yellow.on_red
       self.play_again?
     end
   end

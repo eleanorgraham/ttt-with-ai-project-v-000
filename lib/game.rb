@@ -50,9 +50,9 @@ class Game
       turn
     end
     if won?
-      puts "Congratulations #{winner}!"
+      puts "Congratulations #{winner}!".light_yellow.on_red
     elsif draw?
-      puts "Cats Game!"
+      puts "Cats Game!".light_yellow.on_red
     end
   end
 
@@ -61,7 +61,7 @@ class Game
     if board.valid_move?(input)
       board.update(input, current_player)
     else
-      puts "That is not a valid move."
+      puts "That is not a valid move.".light_yellow.on_red
       turn
     end
     board.display
@@ -70,7 +70,7 @@ class Game
   def self.wargames
     counter = 1
       until counter == 101
-      puts "Game #{counter}"
+      puts "Game #{counter}".light_yellow.on_red
       sleep(0.01)
       game= Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new)
       game.play
