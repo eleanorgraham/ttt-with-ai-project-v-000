@@ -10,28 +10,28 @@ class Board
   end
 
   def display
-    a = taken?("1") ? "#{cells[0]}".light_yellow.on_red : "1".light_black.on_red
-    b = taken?("2") ? "#{cells[1]}".light_yellow.on_red : "2".light_black.on_red
-    c = taken?("3") ? "#{cells[2]}".light_yellow.on_red : "3".light_black.on_red
-    d = taken?("4") ? "#{cells[3]}".light_yellow.on_red : "4".light_black.on_red
-    e = taken?("5") ? "#{cells[4]}".light_yellow.on_red : "5".light_black.on_red
-    f = taken?("6") ? "#{cells[5]}".light_yellow.on_red : "6".light_black.on_red
-    g = taken?("7") ? "#{cells[6]}".light_yellow.on_red : "7".light_black.on_red
-    h = taken?("8") ? "#{cells[7]}".light_yellow.on_red : "8".light_black.on_red
-    i = taken?("9") ? "#{cells[8]}".light_yellow.on_red : "9".light_black.on_red
-    puts " #{a} | #{b} | #{c} ".on_red
-    puts "-----------".light_yellow.on_red
-    puts " #{d} | #{e} | #{f} ".on_red
-    puts "-----------".light_yellow.on_red
-    puts " #{g} | #{h} | #{i} ".on_red
+    a = taken?("1") ? "#{cells[0]}".light_cyan.on_blue : "1".light_blue.on_blue
+    b = taken?("2") ? "#{cells[1]}".light_cyan.on_blue : "2".light_blue.on_blue
+    c = taken?("3") ? "#{cells[2]}".light_cyan.on_blue : "3".light_blue.on_blue
+    d = taken?("4") ? "#{cells[3]}".light_cyan.on_blue : "4".light_blue.on_blue
+    e = taken?("5") ? "#{cells[4]}".light_cyan.on_blue : "5".light_blue.on_blue
+    f = taken?("6") ? "#{cells[5]}".light_cyan.on_blue : "6".light_blue.on_blue
+    g = taken?("7") ? "#{cells[6]}".light_cyan.on_blue : "7".light_blue.on_blue
+    h = taken?("8") ? "#{cells[7]}".light_cyan.on_blue : "8".light_blue.on_blue
+    i = taken?("9") ? "#{cells[8]}".light_cyan.on_blue : "9".light_blue.on_blue
+    puts " #{a} | #{b} | #{c} ".on_blue
+    puts "-----------".light_cyan.on_blue
+    puts " #{d} | #{e} | #{f} ".on_blue
+    puts "-----------".light_cyan.on_blue
+    puts " #{g} | #{h} | #{i} ".on_blue
   end
 
   def display_positions
-    puts " 1 | 2 | 3 ".light_black.on_red
-    puts "-----------".light_black.on_red
-    puts " 4 | 5 | 6 ".light_black.on_red
-    puts "-----------".light_black.on_red
-    puts " 7 | 8 | 9 ".light_black.on_red
+    puts " 1 | 2 | 3 ".light_blue.on_blue
+    puts "-----------".light_blue.on_blue
+    puts " 4 | 5 | 6 ".light_blue.on_blue
+    puts "-----------".light_blue.on_blue
+    puts " 7 | 8 | 9 ".light_blue.on_blue
   end
 
   def position(input_string)
